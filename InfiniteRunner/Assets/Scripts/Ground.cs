@@ -16,4 +16,11 @@ public class Ground : MonoBehaviour
     {
         transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+    }
 }
