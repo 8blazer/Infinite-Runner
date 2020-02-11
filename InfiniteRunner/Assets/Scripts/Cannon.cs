@@ -9,6 +9,7 @@ public class Cannon : MonoBehaviour
     static public bool power = false;
     bool onUp = true;
     bool powerUp = true;
+    bool shot = false;
     int i = 0;
     public int speed = 0;
     public Vector2 velocity;
@@ -65,14 +66,13 @@ public class Cannon : MonoBehaviour
                 }
             }
         }
-        if (rotating == false && power == false)
+        if (rotating == false && power == false && shot == false)
         {
             player.transform.rotation = transform.rotation;
             player.GetComponent<SpriteRenderer>().enabled = true;
-            player.GetComponent<Rigidbody2D>().gravityScale = 50;
+            player.GetComponent<Rigidbody2D>().gravityScale = 1;
             player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
+            shot = true;
         }
-        player.GetComponent<Rigidbody2D>().velocity = player.GetComponent<Rigidbody2D>().velocity * .1f;
-        velocity = player.GetComponent<Rigidbody2D>().velocity;
     }
 }
