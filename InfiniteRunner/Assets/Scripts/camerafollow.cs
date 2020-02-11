@@ -53,9 +53,9 @@ public class camerafollow : MonoBehaviour
         {
             transform.position = new Vector3(1, transform.position.y, transform.position.z);
         }
-        if (player.position.x >= nextlevelposition)
+        /*if (player.position.x >= nextlevelposition)
         {
             fader.GetComponent<LevelFade>().run();
-        }
+        }*/
     }
 }
