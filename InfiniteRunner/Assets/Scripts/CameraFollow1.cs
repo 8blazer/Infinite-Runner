@@ -14,10 +14,17 @@ public class CameraFollow1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y , -10);
-        if (transform.position.y < 0f)
+        if (this.gameObject.name == "terror")
         {
-            transform.position = new Vector3(transform.position.x, 0f, -10);
+            transform.position = new Vector3(player.transform.position.x + 3, player.transform.position.y, -10);
+        }
+        else
+        {
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y , -10);
+            if (transform.position.y < 0f)
+            {
+                transform.position = new Vector3(transform.position.x, 0f, -10);
+            }
         }
     }
 }
