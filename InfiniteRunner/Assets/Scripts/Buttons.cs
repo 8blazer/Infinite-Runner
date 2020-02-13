@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     public Button fireButton;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,10 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     public void StopButton()
@@ -28,5 +32,13 @@ public class Buttons : MonoBehaviour
     {
         Cannon.power = false;
         Destroy(this.gameObject);
+    }
+    public void JumpButton()
+    {
+        if (ActualRunning.grounded)
+        {
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
+            ActualRunning.grounded = false;
+        }
     }
 }
