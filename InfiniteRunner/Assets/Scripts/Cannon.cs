@@ -73,6 +73,7 @@ public class Cannon : MonoBehaviour
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
             shot = true;
+            Destroy(slider.gameObject);
         }
     }
 }
