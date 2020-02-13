@@ -15,7 +15,10 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     public void StopButton()
@@ -32,10 +35,10 @@ public class Buttons : MonoBehaviour
     }
     public void JumpButton()
     {
-        if (Running.grounded)
+        if (ActualRunning.grounded)
         {
-            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10));
-            Running.grounded = false;
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
+            ActualRunning.grounded = false;
         }
     }
 }
