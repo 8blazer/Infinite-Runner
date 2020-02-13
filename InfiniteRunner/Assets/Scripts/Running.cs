@@ -36,10 +36,6 @@ public class Running : MonoBehaviour
                 oldX = transform.position.x;
             }
         }
-        if (running)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-        }
         if (timerGoing)
         {
             timer += Time.deltaTime;

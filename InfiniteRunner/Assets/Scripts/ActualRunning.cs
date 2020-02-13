@@ -25,16 +25,18 @@ public class ActualRunning : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > 1)
             {
-                running = true;
-                timerGoing = false;
                 GetComponent<BoxCollider2D>().enabled = true;
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                if (timer > 3)
+                {
+                    running = true;
+                    GetComponent<Animator>().runtimeAnimatorController = runningAnimator;
+                }
             }
         }
         if (running)
         {
-            GetComponent<Animator>().runtimeAnimatorController = runningAnimator;
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(5,0));
+            GetComponent<Rigidbody2D>().velocity = new Vector2(10, GetComponent<Rigidbody2D>().velocity.y);
         }
         groundCheck = grounded;
     }
