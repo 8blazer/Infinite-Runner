@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow1 : MonoBehaviour
 {
     public GameObject player;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,17 @@ public class CameraFollow1 : MonoBehaviour
         {
             transform.position = new Vector3(player.transform.position.x + 3, player.transform.position.y, -10);
         }
-        else
+        else if (ActualRunning.stopped == false)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y , -10);
+            if (transform.position.y < 0f)
+            {
+                transform.position = new Vector3(transform.position.x, 0f, -10);
+            }
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + speed, player.transform.position.y, -10);
             if (transform.position.y < 0f)
             {
                 transform.position = new Vector3(transform.position.x, 0f, -10);
