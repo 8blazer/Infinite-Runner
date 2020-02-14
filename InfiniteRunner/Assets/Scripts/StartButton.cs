@@ -18,7 +18,11 @@ public class StartButton : MonoBehaviour
     }
     public void OnButtonClick()
     {
-        PlayerPrefs.DeleteAll();
+        ActualRunning.running = false;
+        ActualRunning.stopped = false;
+        ActualRunning.grounded = false;
+        Cannon.rotating = true;
+        Cannon.power = false;
         SceneManager.LoadScene("Game");
     }
 }

@@ -53,6 +53,10 @@ public class ActualRunning : MonoBehaviour
             }
         }
         groundCheck = grounded;
+        if (transform.position.y < -5.45f)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
