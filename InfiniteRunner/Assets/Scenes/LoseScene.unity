@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 41841646}
   - component: {fileID: 41841647}
   - component: {fileID: 41841648}
+  - component: {fileID: 41841649}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -324,6 +325,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9c93ce4be54deb429fb2e3babf43dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &41841649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41841641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93123f91125a5745a57571456ab50ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &145594516
@@ -853,8 +866,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 41841647}
-        m_MethodName: Quitgame
+      - m_Target: {fileID: 41841649}
+        m_MethodName: OnShopClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -968,7 +981,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUIT
+  m_Text: SHOP
 --- !u!222 &1146281019
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class ActualRunning : MonoBehaviour
                     oldX = transform.position.x - 1;
                 }
             }
-            else if (running == true && timer > .05f)
+            else if (running == true && timer > .05f && stopped == false)
             {
                 oldX = transform.position.x;
                 timer = 0;
@@ -50,6 +50,10 @@ public class ActualRunning : MonoBehaviour
             if (transform.position.x < oldX)
             {
                 stopped = true;
+            }
+            else
+            {
+                stopped = false;
             }
         }
         groundCheck = grounded;
