@@ -34,7 +34,7 @@ public class CameraFollow1 : MonoBehaviour
         }
         else if (ActualRunning.stopped == false && behind)
         {
-            transform.position = new Vector3(transform.position.x - speed, player.transform.position.y, -10);
+            transform.position = new Vector3(transform.position.x - (speed / 8), player.transform.position.y, -10);
             if (transform.position.y < 0f)
             {
                 transform.position = new Vector3(transform.position.x, 0f, -10);
