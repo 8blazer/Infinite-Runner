@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NewConnerTest.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/LoseScene.unity
-    guid: 290aa34e8796dc44c99fd98c8f4d5c8c
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0b10d9ccca98ecb4e9bf533fd722211e
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 7359d6263a9b8574cb1083ebc3c1f684
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0b10d9ccca98ecb4e9bf533fd722211e
+    path: Assets/Scenes/LoseScene.unity
+    guid: 290aa34e8796dc44c99fd98c8f4d5c8c
+  - enabled: 0
+    path: Assets/Scenes/NewConnerTest.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 8bb74565db2fdf34bbf138edee0895e6

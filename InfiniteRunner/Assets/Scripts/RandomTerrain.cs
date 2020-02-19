@@ -7,6 +7,7 @@ public class RandomTerrain : MonoBehaviour
     public int height = -4;
     public GameObject player;
     int generatedX = 0;
+    int tempHeight;
     int roundedX = 0;
     public Tilemap tilemap;
     public RuleTile tile;
@@ -33,6 +34,15 @@ public class RandomTerrain : MonoBehaviour
             if (i != 1)
             {
                 tilemap.SetTile(new Vector3Int(Mathf.RoundToInt(generatedX), height, 0), tile);
+            }
+            if (height > -5 && i != 1)
+            {
+                tempHeight = height - 1;
+                while (tempHeight > -7)
+                {
+                    tilemap.SetTile(new Vector3Int(Mathf.RoundToInt(generatedX), tempHeight, 0), tile);
+                    tempHeight--;
+                }
             }
             i = rnd.Next(1, 15);
             if (i == 1)
