@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DistanceCounter : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     public Text distanceText;
     public int distanceRaw;
     public int distanceMeter;
@@ -18,8 +18,20 @@ public class DistanceCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceRaw = Mathf.RoundToInt(player.position.x);
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        distanceRaw = Mathf.RoundToInt(player.transform.position.x);
         distanceMeter = Mathf.RoundToInt(distanceRaw / 5.0f);
-        distanceText.text = distanceMeter + "m";
+        if (distanceMeter > PlayerPrefs.GetInt("Highscore"))
+        {
+            PlayerPrefs.SetInt("Highscore", distanceMeter);
+        }
+        if (distanceMeter == -1)
+        {
+            distanceMeter++;
+        }
+        distanceText.text = distanceMeter + "m/" + PlayerPrefs.GetInt("Highscore") + "m";
     }
 }

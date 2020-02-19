@@ -37,7 +37,7 @@ public class Buttons : MonoBehaviour
     {
         if (ActualRunning.grounded)
         {
-            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 500));
             ActualRunning.grounded = false;
         }
     }
