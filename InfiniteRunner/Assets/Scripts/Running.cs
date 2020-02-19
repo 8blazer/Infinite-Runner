@@ -21,7 +21,7 @@ public class Running : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > -4.5f && running == false)
+        if (transform.position.x > -4.5f)
         {
             accTimer += Time.deltaTime;
             if (accTimer > 1)
@@ -40,6 +40,13 @@ public class Running : MonoBehaviour
         {
             timer += Time.deltaTime;
             
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (transform.position.x > -3 && collision.gameObject.tag == "Ground")
+        {
+            running = true;
         }
     }
 }

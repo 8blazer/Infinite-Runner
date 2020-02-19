@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 328451117}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1371,6 +1371,7 @@ GameObject:
   - component: {fileID: 1054857888}
   - component: {fileID: 1054857887}
   - component: {fileID: 1054857886}
+  - component: {fileID: 1054857891}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1504,6 +1505,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054857891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054857885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4816750a9b7eb49478f74927f59db23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151445360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2142,7 @@ PrefabInstance:
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 64.7
+      value: 134.86
       objectReference: {fileID: 0}
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
@@ -2159,7 +2172,7 @@ PrefabInstance:
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2476.11
+      value: 5282.53
       objectReference: {fileID: 0}
     - target: {fileID: 394641448173143086, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
