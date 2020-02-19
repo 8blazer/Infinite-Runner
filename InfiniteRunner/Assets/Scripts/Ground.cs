@@ -12,7 +12,7 @@ public class Ground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Running.running == false && player != null)
         {

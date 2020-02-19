@@ -44,7 +44,7 @@ public class Running : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (transform.position.x > -3 && collision.gameObject.tag == "Ground")
+        if (transform.position.x > 0 && collision.gameObject.tag == "Ground")
         {
             running = true;
         }
