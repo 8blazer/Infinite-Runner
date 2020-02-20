@@ -20,7 +20,7 @@ public class AngFolDir : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (moveDirection != Vector3.zero && Running.running == false && timer > .1f)
+        if (moveDirection != Vector3.zero && Running.running == false /*&& timer > 1.5*/)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

@@ -14,7 +14,7 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Running.running == false && player != null)
+        if (Running.running == false && player != null && player.transform.position.x > transform.position.x)
         {
             transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
