@@ -5,6 +5,7 @@ using UnityEngine;
 public class AngFolDir : MonoBehaviour
 {
     Vector3 lastpos;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,11 @@ public class AngFolDir : MonoBehaviour
     void Update()
     {
         Vector3 moveDirection = gameObject.transform.position - lastpos;
-        if (moveDirection != Vector3.zero && Running.running == false)
+        if (Cannon.rotating == false && Cannon.power == false)
+        {
+            timer += Time.deltaTime;
+        }
+        if (moveDirection != Vector3.zero && Running.running == false && timer > .1f)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

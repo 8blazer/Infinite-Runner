@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
+    public Text youSureText;
+    public GameObject deleteButton;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (youSureText != null)
+        {
+            youSureText.text = "";
+        }
     }
 
     // Update is called once per frame
@@ -43,5 +48,18 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void DeleteSave()
+    {
+        if (youSureText.text == "Are you sure?")
+        {
+            PlayerPrefs.DeleteAll();
+            youSureText.text = "";
+            Destroy(deleteButton);
+        }
+        if (PlayerPrefs.GetInt("Highscore") != 0)
+        {
+            youSureText.text = "Are you sure?";
+        }
     }
 }

@@ -21,7 +21,7 @@ public class Ground : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player" && ActualRunning.running == false)
+        if (collision.gameObject.name == "Player" && ActualRunning.running == false && Running.running == false)
         {
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
