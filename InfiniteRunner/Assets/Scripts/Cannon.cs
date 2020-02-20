@@ -71,6 +71,10 @@ public class Cannon : MonoBehaviour
             player.transform.rotation = transform.rotation;
             player.GetComponent<SpriteRenderer>().enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
+            if (slider.value < .1f)
+            {
+                slider.value = .1f;
+            }
             player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
             shot = true;
             Destroy(slider.gameObject);
