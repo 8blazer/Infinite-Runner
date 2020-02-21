@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
         if (youSureText.text == "Are you sure?")
         {
             PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetString("Cannon", "Normal");
             youSureText.text = "";
             Destroy(deleteButton);
         }

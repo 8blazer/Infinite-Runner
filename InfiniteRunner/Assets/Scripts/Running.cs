@@ -10,7 +10,7 @@ public class Running : MonoBehaviour
     public GameObject animatingFish;
     public int speed;
     public Button jumpButton;
-    bool timerGoing = false;
+    static public bool timerGoing = false;
     float timer = 0;
     // Start is called before the first frame update
     void Start()

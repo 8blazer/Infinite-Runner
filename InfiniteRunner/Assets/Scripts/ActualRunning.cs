@@ -8,6 +8,7 @@ public class ActualRunning : MonoBehaviour
     bool timerGoing = true;
     float timer = 0;
     static public bool running = false;
+
     static public bool grounded = false;
     static public bool stopped = false;
     public bool groundCheck;

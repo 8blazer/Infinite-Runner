@@ -25,10 +25,10 @@ public class RandomTerrain : MonoBehaviour
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            generatedX = Mathf.RoundToInt(player.transform.position.x + 13);
+            generatedX = Mathf.RoundToInt(player.transform.position.x + 15);
         }
         roundedX = Mathf.RoundToInt(player.transform.position.x);
-        if (ActualRunning.running && roundedX + 13 > generatedX)
+        if (ActualRunning.running && roundedX + 15 > generatedX)
         {
             i = rnd.Next(1, 8);
             if (i != 1)
@@ -53,7 +53,7 @@ public class RandomTerrain : MonoBehaviour
             {
                 height--;
             }
-            generatedX = Mathf.RoundToInt(player.transform.position.x + 13);
+            generatedX = Mathf.RoundToInt(player.transform.position.x + 15);
         }
     }
 }

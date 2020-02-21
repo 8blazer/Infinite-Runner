@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Selection : MonoBehaviour
 {
-    public Image selection;
+    public GameObject selection;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +19,19 @@ public class Selection : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Cannon") == "Normal")
         {
-            selection.rectTransform.position = new Vector3(-342.8f, 167.3f, 0);
+            selection.transform.position = new Vector3(-5.303f, 2.727f, 0);
         }
         if (PlayerPrefs.GetString("Cannon") == "Tank")
         {
-            selection.rectTransform.position = new Vector3(-85.7f, 167.3f, 0);
+            selection.transform.position = new Vector3(-1.43f, 2.727f, 0);
         }
         if (PlayerPrefs.GetString("Cannon") == "Gold")
         {
-            selection.rectTransform.position = new Vector3(-342.8f, -.7f, 0);
+            selection.transform.position = new Vector3(-5.303f, -1.165f, 0);
         }
         if (PlayerPrefs.GetString("Cannon") == "Candy")
         {
-            selection.rectTransform.position = new Vector3(-85.7f, -.7f, 0);
+            selection.transform.position = new Vector3(-5.303f, -1.165f, 0);
         }
     }
     public void DefaultSelect()
