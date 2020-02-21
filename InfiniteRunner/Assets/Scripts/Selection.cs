@@ -47,14 +47,14 @@ public class Selection : MonoBehaviour
     }
     public void GoldSelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 274)
+        if (PlayerPrefs.GetInt("Highscore") > 299)
         {
             PlayerPrefs.SetString("Cannon", "Gold");
         }
     }
     public void CandySelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 349)
+        if (PlayerPrefs.GetInt("Highscore") > 399)
         {
             PlayerPrefs.SetString("Cannon", "Candy");
         }
