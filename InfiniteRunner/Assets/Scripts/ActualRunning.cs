@@ -27,6 +27,18 @@ public class ActualRunning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (running)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(10, GetComponent<Rigidbody2D>().velocity.y);
+            if (transform.position.x < oldX)
+            {
+                stopped = true;
+            }
+            else
+            {
+                stopped = false;
+            }
+        }
         if (timerGoing)
         {
             timer += Time.deltaTime;
@@ -42,22 +54,10 @@ public class ActualRunning : MonoBehaviour
                     oldX = transform.position.x - 1;
                 }
             }
-            else if (running == true && timer > .05f && stopped == false)
+            else if (running == true && timer > .1f)
             {
                 oldX = transform.position.x;
                 timer = 0;
-            }
-        }
-        if (running)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(10, GetComponent<Rigidbody2D>().velocity.y);
-            if (transform.position.x < oldX)
-            {
-                stopped = true;
-            }
-            else
-            {
-                stopped = false;
             }
         }
         groundCheck = grounded;

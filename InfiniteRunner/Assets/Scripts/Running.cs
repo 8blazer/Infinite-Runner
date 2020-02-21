@@ -11,6 +11,7 @@ public class Running : MonoBehaviour
     public GameObject animatingFish;
     public int speed;
     public Button jumpButton;
+    public Text jumpButtonText;
     static public bool timerGoing = false;
     public float timer = 0;
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class Running : MonoBehaviour
                 {
                     Instantiate(animatingFish, transform.position + new Vector3(0,.65f,0), Quaternion.identity);
                     jumpButton.GetComponent<Image>().enabled = true;
+                    jumpButtonText.GetComponent<Text>().enabled = true;
                     Destroy(this.gameObject);
                 }
                 accTimer = 0;

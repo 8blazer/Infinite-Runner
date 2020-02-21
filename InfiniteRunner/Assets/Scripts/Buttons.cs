@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     public Button fireButton;
+    public Text fireButtonText;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class Buttons : MonoBehaviour
         CannonTest.power = true;
         Destroy(this.gameObject);
         fireButton.GetComponent<Image>().enabled = true;
+        fireButtonText.GetComponent<Text>().enabled = true;
     }
     public void PowerButton()
     {
