@@ -18,6 +18,10 @@ public class StartButton : MonoBehaviour
     }
     public void OnButtonClick()
     {
+        if (PlayerPrefs.GetString("Cannon") == "")
+        {
+            PlayerPrefs.SetString("Cannon", "Normal");
+        }
         ActualRunning.running = false;
         ActualRunning.stopped = false;
         ActualRunning.grounded = false;

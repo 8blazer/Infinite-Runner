@@ -17,6 +17,9 @@ public class ActualRunning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        running = false;
+        grounded = false;
+        stopped = false;
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }

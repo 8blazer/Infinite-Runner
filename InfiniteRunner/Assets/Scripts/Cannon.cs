@@ -7,6 +7,10 @@ public class Cannon : MonoBehaviour
 {
     static public bool rotating = true;
     static public bool power = false;
+    public Sprite defaultSprite;
+    public Sprite tankSprite;
+    public Sprite goldSprite;
+    public Sprite candySprite;
     bool onUp = true;
     bool powerUp = true;
     bool shot = false;
@@ -18,7 +22,22 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (PlayerPrefs.GetString("Cannon") == "Default")
+        {
+            GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        }
+        else if (PlayerPrefs.GetString("Cannon") == "Tank")
+        {
+            GetComponent<SpriteRenderer>().sprite = tankSprite;
+        }
+        else if (PlayerPrefs.GetString("Cannon") == "Gold")
+        {
+            GetComponent<SpriteRenderer>().sprite = goldSprite;
+        }
+        else if (PlayerPrefs.GetString("Cannon") == "Candy")
+        {
+            GetComponent<SpriteRenderer>().sprite = candySprite;
+        }
     }
 
     // Update is called once per frame
@@ -77,19 +96,19 @@ public class Cannon : MonoBehaviour
             }
             if (PlayerPrefs.GetString("Cannon") == "Normal")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f);
             }
             else if (PlayerPrefs.GetString("Cannon") == "Tank")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.1f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.1f;
             }
             else if (PlayerPrefs.GetString("Cannon") == "Gold")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.2f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.2f;
             }
             else if (PlayerPrefs.GetString("Cannon") == "Candy")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.3f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.3f;
             }
             shot = true;
             Destroy(slider.gameObject);

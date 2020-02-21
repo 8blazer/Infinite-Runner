@@ -595,6 +595,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdfd00236cd9f3499f5f6d5133bf191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 4464646412449416814, guid: efdf18fa103071944a03bc77c49a13b3,
+    type: 3}
+  tankSprite: {fileID: 81700387527080288, guid: efdf18fa103071944a03bc77c49a13b3,
+    type: 3}
+  goldSprite: {fileID: -2129639114134660399, guid: efdf18fa103071944a03bc77c49a13b3,
+    type: 3}
+  candySprite: {fileID: 3772007743143295250, guid: efdf18fa103071944a03bc77c49a13b3,
+    type: 3}
   speed: 100
   velocity: {x: 0, y: 0}
   slider: {fileID: 1151445362}
@@ -1391,10 +1399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2993a32616c914a997903c24a3c499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runningCheck: 0
   animatingFish: {fileID: 7021414607965418948, guid: 61e893804cad0ce4ba41cfcf7586a497,
     type: 3}
   speed: 3
   jumpButton: {fileID: 196301398}
+  timer: 0
 --- !u!61 &1054857887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1419,7 +1429,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.175, y: 0.12105027}
+  m_Size: {x: 0.25, y: 0.12105027}
   m_EdgeRadius: 0
 --- !u!50 &1054857888
 Rigidbody2D:
@@ -1602,7 +1612,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.094
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

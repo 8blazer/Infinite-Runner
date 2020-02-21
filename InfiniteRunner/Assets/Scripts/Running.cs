@@ -17,6 +17,8 @@ public class Running : MonoBehaviour
     void Start()
     {
         oldX = transform.position.x;
+        GetComponent<BoxCollider2D>().enabled = false;
+        running = false;
     }
 
     // Update is called once per frame
@@ -41,12 +43,20 @@ public class Running : MonoBehaviour
         if (timerGoing)
         {
             timer += Time.deltaTime;
-            
+            if (timer > .25)
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+                timerGoing = false;
+            }
+        }
+        if (running)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" && timer > .25)
+        if (collision.gameObject.tag == "Ground")
         {
             running = true;
             timerGoing = false;
