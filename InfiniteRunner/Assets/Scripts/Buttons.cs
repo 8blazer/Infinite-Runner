@@ -25,12 +25,16 @@ public class Buttons : MonoBehaviour
     {
         Cannon.rotating = false;
         Cannon.power = true;
+        CannonTest.rotating = false;
+        CannonTest.power = true;
         Destroy(this.gameObject);
         fireButton.GetComponent<Image>().enabled = true;
     }
     public void PowerButton()
     {
         Cannon.power = false;
+        Running.timerGoing = true;
+        CannonTest.power = false;
         Running.timerGoing = true;
         Destroy(this.gameObject);
     }
