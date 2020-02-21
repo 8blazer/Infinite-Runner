@@ -75,7 +75,22 @@ public class Cannon : MonoBehaviour
             {
                 slider.value = .1f;
             }
-            player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
+            if (PlayerPrefs.GetString("Cannon") == "Normal")
+            {
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value;
+            }
+            else if (PlayerPrefs.GetString("Cannon") == "Tank")
+            {
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.1f;
+            }
+            else if (PlayerPrefs.GetString("Cannon") == "Gold")
+            {
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.2f;
+            }
+            else if (PlayerPrefs.GetString("Cannon") == "Candy")
+            {
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * slider.value * 1.3f;
+            }
             shot = true;
             Destroy(slider.gameObject);
         }

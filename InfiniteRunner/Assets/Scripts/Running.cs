@@ -7,11 +7,12 @@ public class Running : MonoBehaviour
     float accTimer = 0;
     float oldX = 0;
     static public bool running = false;
+    public bool runningCheck = false;
     public GameObject animatingFish;
     public int speed;
     public Button jumpButton;
     static public bool timerGoing = false;
-    float timer = 0;
+    public float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Running : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        runningCheck = running;
         if (transform.position.x > -4.5f)
         {
             accTimer += Time.deltaTime;
@@ -44,9 +46,10 @@ public class Running : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (transform.rotation.z < 0 && collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && timer > .25)
         {
             running = true;
+            timerGoing = false;
         }
     }
 }

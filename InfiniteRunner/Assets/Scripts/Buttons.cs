@@ -31,6 +31,7 @@ public class Buttons : MonoBehaviour
     public void PowerButton()
     {
         Cannon.power = false;
+        Running.timerGoing = true;
         Destroy(this.gameObject);
     }
     public void JumpButton()

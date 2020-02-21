@@ -31,7 +31,7 @@ public class Selection : MonoBehaviour
         }
         if (PlayerPrefs.GetString("Cannon") == "Candy")
         {
-            selection.transform.position = new Vector3(-5.303f, -1.165f, 0);
+            selection.transform.position = new Vector3(-1.43f, -1.165f, 0);
         }
     }
     public void DefaultSelect()
@@ -47,14 +47,14 @@ public class Selection : MonoBehaviour
     }
     public void GoldSelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 229)
+        if (PlayerPrefs.GetInt("Highscore") > 274)
         {
             PlayerPrefs.SetString("Cannon", "Gold");
         }
     }
     public void CandySelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 249)
+        if (PlayerPrefs.GetInt("Highscore") > 349)
         {
             PlayerPrefs.SetString("Cannon", "Candy");
         }
