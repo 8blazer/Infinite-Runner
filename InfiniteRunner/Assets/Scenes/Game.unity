@@ -606,7 +606,7 @@ MonoBehaviour:
     type: 3}
   candySprite: {fileID: 3772007743143295250, guid: efdf18fa103071944a03bc77c49a13b3,
     type: 3}
-  speed: 100
+  speed: 75
   velocity: {x: 0, y: 0}
   slider: {fileID: 1151445362}
   player: {fileID: 1054857885}
@@ -789,7 +789,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.8531756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -800,7 +800,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 4.7063513}
   m_EdgeRadius: 0
 --- !u!1 &542300289
 GameObject:
