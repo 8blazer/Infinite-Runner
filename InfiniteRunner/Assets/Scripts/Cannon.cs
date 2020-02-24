@@ -13,7 +13,7 @@ public class Cannon : MonoBehaviour
     public Sprite candySprite;
     bool onUp = true;
     bool powerUp = true;
-    bool shot = false;
+    static public bool shot = false;
     int i = 0;
     public int speed = 0;
     public Vector2 velocity;
@@ -29,6 +29,7 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shot = false;
         if (PlayerPrefs.GetString("Cannon") == "Default")
         {
             GetComponent<SpriteRenderer>().sprite = defaultSprite;

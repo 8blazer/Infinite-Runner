@@ -30,11 +30,11 @@ public class ActualRunning : MonoBehaviour
         if (running)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(10, GetComponent<Rigidbody2D>().velocity.y);
-            if (transform.position.x < oldX)
+            if (transform.position.x <= oldX && timer > .05f)
             {
                 stopped = true;
             }
-            else
+            else if (transform.position.x > oldX)
             {
                 stopped = false;
             }
