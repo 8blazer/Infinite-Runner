@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 1857129160}
   - component: {fileID: 1857129159}
   m_Layer: 5
-  m_Name: Text
+  m_Name: JumpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

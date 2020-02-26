@@ -11,6 +11,8 @@ public class ActualRunning : MonoBehaviour
 
     static public bool grounded = false;
     static public bool stopped = false;
+    public GameObject jumpButton;
+    public GameObject jumpButtonText;
     public bool groundCheck;
     float oldX;
     public RuntimeAnimatorController runningAnimator;
@@ -27,8 +29,18 @@ public class ActualRunning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (jumpButton == null)
+        {
+            jumpButton = GameObject.Find("JumpButton");
+            jumpButtonText = GameObject.Find("JumpText");
+        }
         if (running)
         {
+            if (jumpButton != null)
+            {
+                jumpButton.GetComponent<Image>().enabled = true;
+                jumpButtonText.GetComponent<Text>().enabled = true;
+            }
             GetComponent<Rigidbody2D>().velocity = new Vector2(10, GetComponent<Rigidbody2D>().velocity.y);
             if (transform.position.x <= oldX && timer > .05f)
             {

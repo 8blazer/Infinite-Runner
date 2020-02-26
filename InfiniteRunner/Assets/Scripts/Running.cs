@@ -34,8 +34,6 @@ public class Running : MonoBehaviour
                 if (oldX + .1f > transform.position.x && running)
                 {
                     Instantiate(animatingFish, transform.position + new Vector3(0,.65f,0), Quaternion.identity);
-                    jumpButton.GetComponent<Image>().enabled = true;
-                    jumpButtonText.GetComponent<Text>().enabled = true;
                     Destroy(this.gameObject);
                 }
                 accTimer = 0;
