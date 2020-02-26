@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class Selection : MonoBehaviour
 {
     public GameObject selection;
+    static public int tankCannonReq = 499;
+    static public int goldCannonReq = 749;
+    static public int candyCannonReq = 999;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,21 +43,21 @@ public class Selection : MonoBehaviour
     }
     public void TankSelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 199)
+        if (PlayerPrefs.GetInt("Highscore") > tankCannonReq)
         {
             PlayerPrefs.SetString("Cannon", "Tank");
         }
     }
     public void GoldSelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 299)
+        if (PlayerPrefs.GetInt("Highscore") > goldCannonReq)
         {
             PlayerPrefs.SetString("Cannon", "Gold");
         }
     }
     public void CandySelect()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 399)
+        if (PlayerPrefs.GetInt("Highscore") > candyCannonReq)
         {
             PlayerPrefs.SetString("Cannon", "Candy");
         }

@@ -16,26 +16,29 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Highscore") > 399)
+        if (PlayerPrefs.GetInt("Highscore") > Selection.candyCannonReq)
         {
             candyText.text = "";
             goldText.text = "";
             tankText.text = "";
         }
-        else if (PlayerPrefs.GetInt("Highscore") > 299)
+        else if (PlayerPrefs.GetInt("Highscore") > Selection.goldCannonReq)
         {
             goldText.text = "";
             tankText.text = "";
+            candyText.text = "" + (Selection.candyCannonReq + 1) + "m";
         }
-        else if (PlayerPrefs.GetInt("Highscore") > 249)
+        else if (PlayerPrefs.GetInt("Highscore") > Selection.tankCannonReq)
         {
             tankText.text = "";
+            candyText.text = "" + (Selection.candyCannonReq + 1) + "m";
+            goldText.text = "" + (Selection.goldCannonReq + 1) + "m";
         }
         else
         {
-            candyText.text = "400m";
-            goldText.text = "300m";
-            tankText.text = "250m";
+            candyText.text = "" + (Selection.candyCannonReq + 1) + "m";
+            goldText.text = "" + (Selection.goldCannonReq + 1) + "m";
+            tankText.text = "" + (Selection.tankCannonReq + 1) + "m";
         }
     }
 }

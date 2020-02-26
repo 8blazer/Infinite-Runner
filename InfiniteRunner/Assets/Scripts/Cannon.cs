@@ -108,15 +108,15 @@ public class Cannon : MonoBehaviour
             }
             else if (PlayerPrefs.GetString("Cannon") == "Tank")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.1f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.25f;
             }
             else if (PlayerPrefs.GetString("Cannon") == "Gold")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.2f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.5f;
             }
             else if (PlayerPrefs.GetString("Cannon") == "Candy")
             {
-                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.3f;
+                player.GetComponent<Rigidbody2D>().velocity = player.transform.right * speed * (slider.value + .1f) * 1.75f;
             }
             shot = true;
             Destroy(slider.gameObject);
