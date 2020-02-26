@@ -14,6 +14,8 @@ public class Running : MonoBehaviour
     public Text jumpButtonText;
     static public bool timerGoing = false;
     public float timer = 0;
+    public Text rotationText;
+    public Text velocityText;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,11 @@ public class Running : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rotationText != null)
+        {
+            rotationText.text = transform.rotation.eulerAngles.z.ToString();
+            velocityText.text = "v: " + GetComponent<Rigidbody2D>().velocity.y.ToString();
+        }
         runningCheck = running;
         if (transform.position.x > -4.5f)
         {
@@ -38,6 +45,15 @@ public class Running : MonoBehaviour
                 }
                 accTimer = 0;
                 oldX = transform.position.x;
+            }
+        /*    if (GetComponent<Rigidbody2D>().velocity.y < -10)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -10);
+            }
+            */
+            if (transform.rotation.eulerAngles.z == 90 || transform.rotation.eulerAngles.z == 270)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + 1, 0);
             }
         }
         if (timerGoing)

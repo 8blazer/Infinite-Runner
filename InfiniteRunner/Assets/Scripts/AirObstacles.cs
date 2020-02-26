@@ -27,7 +27,7 @@ public class AirObstacles : MonoBehaviour
         if (!Running.running && Cannon.shot && player.transform.position.x > oldX + 20)
         {
             oldX = player.transform.position.x;
-            rndPrefab = rnd.Next(1, 3);
+            rndPrefab = rnd.Next(1, 4);
             rndHeight = rnd.Next(-20, 21);
             if (player.transform.position.y + rndHeight < 0)
             {

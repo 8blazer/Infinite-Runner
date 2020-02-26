@@ -130,7 +130,7 @@ public class Cannon : MonoBehaviour
     }
     public void Flap()
     {
-        Vector2 flapdirection = new Vector2(0, 1);
+        Vector2 flapdirection = new Vector2(1, 2);
         flapdirection.Normalize();
         if (flaps < maxflaps)
         {

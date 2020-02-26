@@ -26,5 +26,14 @@ public class AngFolDir : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             lastpos = transform.position;
         }
+        /*if (transform.rotation.eulerAngles.z < -90)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + 1, 0);
+        }
+        else if (transform.rotation.eulerAngles.z > 90)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x - 1, 0);
+        }
+        */
     }
 }

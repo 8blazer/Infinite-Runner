@@ -2512,12 +2512,12 @@ PrefabInstance:
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 134.86
+      value: 188.70001
       objectReference: {fileID: 0}
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.1
+      value: -14.099976
       objectReference: {fileID: 0}
     - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
@@ -2544,10 +2544,35 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 5282.53
       objectReference: {fileID: 0}
+    - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 394641448173143087, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 394641448173143086, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 394641448406541280, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 394641448406541280, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 394641448406541280, guid: 4a08e5cef35c8d34ca7fb132da829ab5,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 576
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a08e5cef35c8d34ca7fb132da829ab5, type: 3}
@@ -2776,14 +2801,14 @@ RectTransform:
   m_GameObject: {fileID: 1998653961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 315683442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 6.75, y: -17.300003}
+  m_AnchoredPosition: {x: 9.359985, y: -17.300003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998653963
