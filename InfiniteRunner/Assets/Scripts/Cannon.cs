@@ -23,13 +23,14 @@ public class Cannon : MonoBehaviour
     public bool collide = false;
     public float flappower;
     static public int maxflaps;
-    int flaps = 0;
+    static public int flaps = 0;
     public GameObject flapbutton;
     public Text flapbuttonText;
     // Start is called before the first frame update
     void Start()
     {
         maxflaps = 2;
+        flaps = 0;
         shot = false;
         if (PlayerPrefs.GetString("Cannon") == "Default")
         {

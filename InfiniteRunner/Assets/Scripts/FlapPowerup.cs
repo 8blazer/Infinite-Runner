@@ -31,7 +31,8 @@ public class FlapPowerup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Cannon.maxflaps++;
+        Cannon.flaps--;
+        Cannon.maxflaps--;
         flapButton.GetComponent<Image>().enabled = true;
         flapButtonText.GetComponent<Text>().enabled = true;
         Destroy(this.gameObject);
