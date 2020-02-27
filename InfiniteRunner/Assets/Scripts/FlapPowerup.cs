@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Rocket : MonoBehaviour
+using UnityEngine.UI;
+public class FlapPowerup : MonoBehaviour
 {
     public GameObject player;
     float startX;
+    public GameObject flapButton;
+    public GameObject flapButtonText;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class Rocket : MonoBehaviour
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            flapButton = GameObject.FindGameObjectWithTag("FlapButton");
+            flapButtonText = GameObject.FindGameObjectWithTag("FlapButtonText");
         }
         if (player.transform.position.x > startX + 10)
         {
@@ -27,7 +31,9 @@ public class Rocket : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x + 5, 40);
+        Cannon.maxflaps++;
+        flapButton.GetComponent<Image>().enabled = true;
+        flapButtonText.GetComponent<Text>().enabled = true;
         Destroy(this.gameObject);
     }
 }

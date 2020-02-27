@@ -7,6 +7,7 @@ public class AirObstacles : MonoBehaviour
     public GameObject bombPrefab;
     public GameObject rocketPrefab;
     public GameObject cloudPrefab;
+    public GameObject powerPrefab;
     public GameObject player;
     float oldX = 0;
     System.Random rnd = new System.Random();
@@ -28,22 +29,26 @@ public class AirObstacles : MonoBehaviour
         if (!Running.running && Cannon.shot && player.transform.position.x > oldX + 30)
         {
             oldX = player.transform.position.x;
-            rndPrefab = rnd.Next(1, 5);
+            rndPrefab = rnd.Next(1, 30);
             rndHeight = rnd.Next(-20, 21);
-            if (player.transform.position.y + rndHeight < 0)
+            if (player.transform.position.y + rndHeight < 1)
             {
-                while (player.transform.position.y + rndHeight < 0)
+                while (player.transform.position.y + rndHeight < 1)
                 {
                     rndHeight = rnd.Next(-7, 8);
                 }
             }
-            if (rndPrefab == 1)
+            if (rndPrefab < 6)
             {
                 Instantiate(bombPrefab, new Vector3(player.transform.position.x + 12, player.transform.position.y + rndHeight, player.transform.position.z), Quaternion.identity);
             }
-            else if (rndPrefab == 2)
+            else if (rndPrefab > 5 && rndPrefab < 11)
             {
                 Instantiate(rocketPrefab, new Vector3(player.transform.position.x + 12, player.transform.position.y + rndHeight, player.transform.position.z), Quaternion.identity);
+            }
+            else if (rndPrefab == 11)
+            {
+                Instantiate(powerPrefab, new Vector3(player.transform.position.x + 12, player.transform.position.y + rndHeight, player.transform.position.z), Quaternion.identity);
             }
             else
             {

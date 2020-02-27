@@ -22,13 +22,14 @@ public class Cannon : MonoBehaviour
     public float timer;
     public bool collide = false;
     public float flappower;
-    public int maxflaps;
+    static public int maxflaps;
     int flaps = 0;
     public GameObject flapbutton;
     public Text flapbuttonText;
     // Start is called before the first frame update
     void Start()
     {
+        maxflaps = 2;
         shot = false;
         if (PlayerPrefs.GetString("Cannon") == "Default")
         {
@@ -142,7 +143,8 @@ public class Cannon : MonoBehaviour
         {
             player.GetComponent<Animator>().SetTrigger("flap");
             player.GetComponent<Rigidbody2D>().velocity += (flapdirection * flappower);
-            Destroy(flapbutton);
+            flapbutton.GetComponent<Image>().enabled = false;
+            flapbuttonText.GetComponent<Text>().enabled = false;
         }
     }
 }

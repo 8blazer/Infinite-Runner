@@ -6,6 +6,8 @@ TagManager:
   tags:
   - JumpButton
   - Ground
+  - FlapButton
+  - FlapButtonText
   layers:
   - Default
   - TransparentFX
