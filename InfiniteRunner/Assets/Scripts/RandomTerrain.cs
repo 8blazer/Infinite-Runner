@@ -11,6 +11,7 @@ public class RandomTerrain : MonoBehaviour
     int roundedX = 0;
     int difficulty = 8;
     int difficultyCounter = 0;
+    bool priorTile;
     public Tilemap tilemap;
     public RuleTile tile;
     System.Random rnd = new System.Random();
@@ -32,10 +33,22 @@ public class RandomTerrain : MonoBehaviour
         roundedX = Mathf.RoundToInt(player.transform.position.x);
         if (ActualRunning.running && roundedX + 16 > generatedX)
         {
+            i = 5;
+            while (i > -7)
+            {
+                tilemap.SetTile(new Vector3Int(Mathf.RoundToInt(roundedX - 16), i, 0), null);
+                i--;
+            }
+            tilemap.SetTile(new Vector3Int(Mathf.RoundToInt(roundedX - 16), height, 0), null);
             i = rnd.Next(1, difficulty);
             if (i != 1)
             {
                 tilemap.SetTile(new Vector3Int(Mathf.RoundToInt(generatedX), height, 0), tile);
+                priorTile = true;
+            }
+            else
+            {
+                priorTile = false;
             }
             if (height > -5 && i != 1)
             {
@@ -47,11 +60,11 @@ public class RandomTerrain : MonoBehaviour
                 }
             }
             i = rnd.Next(1, 15);
-            if (i == 1)
+            if (i == 1 && priorTile)
             {
                 height++;
             }
-            else if (i == 2 && height > -2)
+            else if (i == 2 && height > -2 && priorTile)
             {
                 height--;
             }
